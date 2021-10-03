@@ -1,2 +1,2 @@
 # priyasubburaj05.github.io
- An interactive website that unlocks the secrets of the sun 
+ An interactive website unlocking the secrets of the SUN
