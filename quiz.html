@@ -1,0 +1,207 @@
+<html>
+
+<head>
+
+<title>STARGAZER QUIZ</title>
+
+</head>
+
+<body>
+
+<center><h1>HERE YOU GO</h1></center>
+
+<p>
+
+<form name="quiz">
+
+<p>
+
+<b>Question 1.
+
+<br>Which planet is also known as our ‘evening star’?<br></b>
+
+<blockquote>
+
+<input type="radio" name="q1" value="don't like">Venus<br>
+
+<input type="radio" name="q1" value="doesn't like">Jupiter<br>
+
+<input type="radio" name="q1" value="doesn't likes">MARS<br>
+
+<input type="radio" name="q1" value="doesn't likes">The Moon<br>
+
+</blockquote>
+
+<p><b>
+
+<hr>
+
+Question 2.
+
+<br>How many rovers are currently operating on Mars?<br></b>
+
+<blockquote>
+
+<input type="radio" name="q2" value="doesn't come">1<br>
+
+<input type="radio" name="q2" value="doesn't come">3<br>
+
+<input type="radio" name="q2" value="don't come">2<br>
+
+<input type="radio" name="q2" value="doesn't comes">5<br>
+
+
+</blockquote>
+
+<p><b>
+
+<hr>
+
+Question 3.
+
+<br>Which star system is the closest to our own?<br></b>
+
+<blockquote>
+
+<input type="radio" name="q3" value="come">Alpha Centuari<br>
+
+<input type="radio" name="q3" value="comes">Proxima Centuari<br>
+
+<input type="radio" name="q3" value="coming">Centaur Beta<br>
+
+<input type="radio" name="q3" value="coming">Betelgeuese<br>
+
+
+</blockquote>
+
+<p><b>
+
+<hr>
+
+Question 4.
+
+<br>Which Australian antennas and radio telescopes received the TV transmission of Neil Armstrong
+ and Buzz Aldrin walking on the Moon and relayed for the world to watch?<br></b>
+
+<blockquote>
+
+<input type="radio" name="q4" value="not">Sucklepark and Dubbo Creek Radio Telescope<br>
+
+<input type="radio" name="q4" value="isn't">Broadacres and Parkville Radio Telescope<br>
+
+<input type="radio" name="q4" value="don't">Honeysuckle Creek and Parkes Radio Telescope<br>
+
+<input type="radio" name="q4" value="isn't">Parkes and Recreation Radio Telescope<br>
+
+
+</blockquote>
+
+<p><b>
+
+<hr>
+
+Question 5.
+
+<br>Which spacecraft is the furthest from Earth?.<br></b>
+
+<blockquote>
+
+<input type="radio" name="q5" value="don't make">Cassini<br>
+
+<input type="radio" name="q5" value="doesn't makes">Voyager 2<br>
+
+<input type="radio" name="q5" value="doesn't makes">Juno<br>
+
+<input type="radio" name="q5" value="doesn't make"> Voyager 1<br>
+
+</blockquote>
+
+<p><b>
+
+<hr>
+
+<input type="button"value="Grade Me"onClick="getScore(this.form);">
+
+<input type="reset" value="Clear"><p>
+
+Number of score out of 15 = <input type= text size 15 name= "mark">
+
+Score in percentage = <input type=text size=15 name="percentage"><br>
+
+</form>
+
+<p>
+
+<form method="post" name="Form" onsubmit="" action="">
+
+</form>
+
+</body>
+
+<script>
+
+var numQues = 5;
+
+var numChoi = 4;
+
+var answers = new Array(5);
+
+answers[0] = "doesn't like";
+
+answers[1] = "don't come";
+
+answers[2] = "come";
+
+answers[3] = "don't";
+
+answers[4] = "doesn't make";
+
+function getScore(form) {
+
+var score = 0;
+
+var currElt;
+
+var currSelection;
+
+for (i=0; i<numQues; i++) {
+
+currElt = i*numChoi;
+
+answered=false;
+
+for (j=0; j<numChoi; j++) {
+
+currSelection = form.elements[currElt + j];
+
+if (currSelection.checked) {
+
+answered=true;
+
+if (currSelection.value == answers[i]) {
+
+score++;
+
+break;
+
+}
+
+}
+
+}
+
+if (answered ===false){alert("Do answer all the questions, Please") ;return false;}
+
+}
+
+var scoreper = Math.round(score/numQues*100);
+
+form.percentage.value = scoreper + "%";
+
+form.mark.value=score;
+
+}
+
+</script>
+
+</html>
